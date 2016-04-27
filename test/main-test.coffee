@@ -9,12 +9,11 @@ fs = require('fs-extra')
 exec = require('child_process').exec
 describe 'angular-meteor generator', ->
   gen = undefined
-  defaultOptions = 
+  defaultOptions =
     script: 'coffee'
     markup: 'jade'
     stylesheet: 'stylus'
     material: true
-    bower: true
     auth: true
     oauth: []
 

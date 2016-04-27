@@ -5,7 +5,7 @@ _ = require('underscore.string')
 _i = require('underscore.inflection')
 genUtils = require('../util.js')
 meteorToAdd = [
-  'angular'
+  'pbastowski:angular-babel'
   'angularui:angular-ui-router'
   'urigo:angular-blaze-template'
 ]
