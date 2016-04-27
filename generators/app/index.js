@@ -266,9 +266,6 @@
         angularModules.splice(angularModules.indexOf('ui-router'), 1);
         angularModules.push('ionic');
       }
-      if (this.filters.bower) {
-        meteorToAdd.push('mquandalle:bower');
-      }
       if (this.filters.pagination) {
         meteorToAdd.push('tmeasday:publish-counts');
         meteorToAdd.push('angularutils:pagination');
@@ -294,8 +291,6 @@
       this.filters.appname = this.appname + 'App';
       this.filters.projectname = this.config.get('appname');
       this.filters.modules = '\'' + (this.filters.js ? angularModules.join('\',\n  \'') : angularModules.join('\'\n  \'')) + '\'';
-      this.filters.usedBower = this.filters.bower === true;
-      this.filters.bower = false;
       this.config.set('filters', this.filters);
       this.sourceRoot(path.join(__dirname, './templates/' + this.filters.framework));
       genUtils.write(this, this.filters);

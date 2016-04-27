@@ -32,7 +32,7 @@ cd into the new directory to run `meteor` commands or to create subcomponents
 * Authentication boilerplate: `Yes`, `No`
 * oAuth integrations: `Facebook` `Twitter` `Google`
 * Pagination, sorting and searching support: `Yes`, `No`
-* `Bower` package management support: `Yes`, `No`
+<!-- * `Bower` package management support: `Yes`, `No` -->
 
 ## Generators
 
@@ -203,5 +203,5 @@ Please see [CONTRIBUTING.md](/CONTRIBUTING.md)
 ## License
 
 [BSD license](http://opensource.org/licenses/bsd-license.php)
-  
+
 heavily inspired by [generator-angular-fullstack](https://github.com/DaftMonk/generator-angular-fullstack)

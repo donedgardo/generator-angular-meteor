@@ -274,8 +274,6 @@ module.exports = yeoman.generators.Base.extend(
       meteorToAdd.push 'driftyco:ionic'
       angularModules.splice angularModules.indexOf('ui-router'), 1
       angularModules.push 'ionic'
-    if @filters.bower
-      meteorToAdd.push 'mquandalle:bower'
     if @filters.pagination
       meteorToAdd.push 'tmeasday:publish-counts'
       meteorToAdd.push 'angularutils:pagination'
@@ -296,8 +294,6 @@ module.exports = yeoman.generators.Base.extend(
     @filters.appname = @appname + 'App'
     @filters.projectname = @config.get('appname')
     @filters.modules = '\'' + (if @filters.js then angularModules.join('\',\n  \'') else angularModules.join('\'\n  \'')) + '\''
-    @filters.usedBower = @filters.bower is true
-    @filters.bower = false #fix for issue #3
     @config.set 'filters', @filters
     @sourceRoot path.join(__dirname, './templates/' + @filters.framework)
     genUtils.write this, @filters
