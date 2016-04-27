@@ -7,7 +7,8 @@ os = require('os')
 genUtils = require('../util.js')
 meteorToAdd = [
   'add'
-  'angular'
+  'angular-templates'
+  'pbastowski:angular-babel'
   'angularui:angular-ui-router'
 ]
 meteorToRemove = [
@@ -73,7 +74,7 @@ module.exports = yeoman.generators.Base.extend(
         ]
         default: 1
         filter: (val) ->
-          filterMap = 
+          filterMap =
             'JavaScript': 'js'
             'CoffeeScript': 'coffee'
           filterMap[val]
@@ -124,7 +125,7 @@ module.exports = yeoman.generators.Base.extend(
           'Ionic'
         ]
         filter: (val) ->
-          filterMap = 
+          filterMap =
             'None': 'none'
             'Angular Material': 'material'
             'Bootstrap': 'bootstrap'
@@ -133,11 +134,6 @@ module.exports = yeoman.generators.Base.extend(
             'Ionic': 'ionic'
           filterMap[val]
       }
-      {
-        type: 'confirm'
-        name: 'bower'
-        message: 'Would you like to include Bower package management support?'
-      }
     ], ((answers) ->
       @filters = {}
       @filters[answers.script] = true
@@ -145,7 +141,6 @@ module.exports = yeoman.generators.Base.extend(
       @filters[answers.stylesheet] = true
       @filters.pagination = ! !answers.pagination
       @filters.framework = answers.framework
-      @filters.bower = ! !answers.bower
       cb()
       return
     ).bind(this)

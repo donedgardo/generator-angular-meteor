@@ -15,7 +15,7 @@
 
   genUtils = require('../util.js');
 
-  meteorToAdd = ['add', 'angular', 'angularui:angular-ui-router'];
+  meteorToAdd = ['add', 'angular-templates', 'pbastowski:angular-babel', 'angularui:angular-ui-router'];
 
   meteorToRemove = ['remove', 'blaze-html-templates', 'ecmascript'];
 
@@ -123,10 +123,6 @@
             };
             return filterMap[val];
           }
-        }, {
-          type: 'confirm',
-          name: 'bower',
-          message: 'Would you like to include Bower package management support?'
         }
       ], (function(answers) {
         this.filters = {};
@@ -135,7 +131,6 @@
         this.filters[answers.stylesheet] = true;
         this.filters.pagination = !!answers.pagination;
         this.filters.framework = answers.framework;
-        this.filters.bower = !!answers.bower;
         cb();
       }).bind(this));
     },

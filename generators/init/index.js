@@ -99,10 +99,6 @@
             };
             return filterMap[val];
           }
-        }, {
-          type: 'confirm',
-          name: 'bower',
-          message: 'Would you like to include Bower package management support?'
         }
       ], (function(answers) {
         this.filters = {};
@@ -113,7 +109,6 @@
         this.filters[answers.stylesheet] = true;
         this.filters.pagination = !!answers.pagination;
         this.filters.framework = answers.framework;
-        this.filters.bower = !!answers.bower;
         cb();
       }).bind(this));
     },
@@ -220,9 +215,6 @@
         meteorToAdd.push('driftyco:ionic');
         angularModules.splice(angularModules.indexOf('ui-router'), 1);
         angularModules.push('ionic');
-      }
-      if (this.filters.bower) {
-        meteorToAdd.push('mquandalle:bower');
       }
       if (this.filters.pagination) {
         meteorToAdd.push('tmeasday:publish-counts');
